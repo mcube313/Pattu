@@ -596,7 +596,7 @@ async def play(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                    InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                    InlineKeyboardButton(text="Group", url=f"https://t.me/joinchat/F_6ts1iYxSE4YzNl"),
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
             ]
@@ -609,7 +609,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += " " + str(i)
         print(query)
-        await lel.edit("🎵 **Processing**")
+        await lel.edit("🎵 🅟🅡🅞🅒🅔🅢🅢🅘🅝🅖")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         
         try:
@@ -621,27 +621,27 @@ async def play(_, message: Message):
             toxxt = "**Select the song you want to play**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣",]
+            emojilist = ["⓵","⓶","⓷","⓸","⓹",]
 
             while j < 5:
-                toxxt += f"{emojilist[j]} **Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})**\n"
-                toxxt += f" ╚ **Duration** - {results[j]['duration']}\n"
-                toxxt += f" ╚ **Views** - {results[j]['views']}\n"
-                toxxt += f" ╚ **Channel** - {results[j]['channel']}\n\n"
+                toxxt += f"{emojilist[j]} **ᎢᏆᎢしᗴ - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})**\n"
+                toxxt += f" ╚ 𝙳𝚞𝚛𝚊𝚝𝚒𝚘𝚗 - {results[j]['duration']}\n"
+                toxxt += f" ╚ 𝚅𝚒𝚎𝚠𝚜 - {results[j]['views']}\n"
+                toxxt += f" ╚ 𝚈𝚘𝚞𝚝𝚞𝚋𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 - {results[j]['channel']}\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("1️⃣", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("2️⃣", callback_data=f'plll 1|{query}|{user_id}'),
-                        InlineKeyboardButton("3️⃣", callback_data=f'plll 2|{query}|{user_id}'),
+                        InlineKeyboardButton("⓵", callback_data=f'plll 0|{query}|{user_id}'),
+                        InlineKeyboardButton("⓶", callback_data=f'plll 1|{query}|{user_id}'),
+                        InlineKeyboardButton("⓷", callback_data=f'plll 2|{query}|{user_id}'),
                     ],
                     [
-                        InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
-                        InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
+                        InlineKeyboardButton("⓸", callback_data=f'plll 3|{query}|{user_id}'),
+                        InlineKeyboardButton("⓹", callback_data=f'plll 4|{query}|{user_id}'),
                     ],
-                    [InlineKeyboardButton(text="Close 🛑", callback_data="cls")],
+                    [InlineKeyboardButton(text="🄲🄻🄾🅂🄴 🛑", callback_data="cls")],
                 ]
             )       
             await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
@@ -679,7 +679,7 @@ async def play(_, message: Message):
                     ],
                     [
                         InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                        InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                        InlineKeyboardButton(text="Group", url=f"https://t.me/joinchat/F_6ts1iYxSE4YzNl"),
                     ],
                     [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
                 ]
@@ -827,7 +827,7 @@ async def ytplay(_, message: Message):
             ],
             [
                 InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                InlineKeyboardButton(text="Group", url=f"https://t.me/joinchat/F_6ts1iYxSE4YzNl"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
@@ -1212,7 +1212,7 @@ async def lol_cb(b, cb):
             ],
             [
                 InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
+                InlineKeyboardButton(text="Group", url=f"https://t.me/joinchat/F_6ts1iYxSE4YzNl"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
