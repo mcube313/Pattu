@@ -36,6 +36,7 @@ from youtube_search import YoutubeSearch
 from DaisyXMusic.config import ARQ_API_KEY
 from DaisyXMusic.config import BOT_NAME as bn
 from DaisyXMusic.config import DURATION_LIMIT
+from DaisyXMusic.config import UPDATE_CHANNEL
 from DaisyXMusic.config import UPDATES_CHANNEL as updateschannel
 from DaisyXMusic.config import que
 from DaisyXMusic.function.admins import admins as a
@@ -455,24 +456,24 @@ async def m_cb(b, cb):
 async def play(_, message: Message):
     global que
     global useer
-    updates_channel = UPDATES_CHANNEL
-    if updates_channel:
+    update_channel = UPDATE_CHANNEL
+    if update_channel:
         try:
-            user = await bot.get_chat_member(updates_channel, update.chat.id)
+            user = await bot.get_chat_member(update_channel, update.chat.id)
             if user.status == "kicked out":
                await update.reply_text("😔 Sorry Dude, You are **🅱︎🅰︎🅽︎🅽︎🅴︎🅳︎ 🤣🤣🤣**")
                return
         except UserNotParticipant:
-            #await update.reply_text(f"Join @{updates_channel} To Use Me")
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
             await update.reply_text(
                 text="<b>🔊 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 🤭.\n\nDo You want Movies?\nJoin Our Main Channel Then go to the group and click on the movie link button and click start button!😁</b>",
                 reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text=" 💢 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 💢 ", url=f"https://t.me/{UPDATES_CHANNEL}")]
+                    [ InlineKeyboardButton(text=" 💢 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 💢 ", url=f"https://t.me/{UPDATE_CHANNEL}")]
               ])
             )
             return
         except Exception:
-            await update.reply_text(f"<b>This bot should be the admin on your update channel</b>\n\n<b>💢 ഈ ചാനലിൽ  @{UPDATES_CHANNEL} ബോട്ടിനെ അഡ്മിൻ ആക്. എന്നിട്ട് /start കൊടുക്</b>\n\n<b>🗣️ any Doubt @MCubeMediaSupport</b>")
+            await update.reply_text(f"<b>This bot should be the admin on your update channel</b>\n\n<b>💢 ഈ ചാനലിൽ  @{UPDATE_CHANNEL} ബോട്ടിനെ അഡ്മിൻ ആക്. എന്നിട്ട് /start കൊടുക്</b>\n\n<b>🗣️ any Doubt @MCubeMediaSupport</b>")
             return
     if message.chat.id in DISABLED_GROUPS:
         return    
