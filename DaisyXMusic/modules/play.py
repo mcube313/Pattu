@@ -453,7 +453,7 @@ async def m_cb(b, cb):
 
 
 @Client.on_message(command("play") & other_filters)
-async def play(_, message: Message):
+async def play(bot,update,_, message: Message):
     global que
     global useer
     update_channel = UPDATE_CHANNEL
@@ -465,14 +465,16 @@ async def play(_, message: Message):
                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await reply_text(
+            await update.reply_text(
                 text="<b>🔊 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 🤭.\n\nDo You want Movies?\nJoin Our Main Channel Then go to the group and click on the movie link button and click start button!😁</b>",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text=" 💢 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 💢 ", url=f"https://t.me/{UPDATE_CHANNEL}")]
               ])
             )
             return
-        
+        except Exception:
+            await update.reply_text(f"<b>This bot should be the admin on your update channel</b>\n\n<b>💢 ഈ ചാനലിൽ  @{UPDATE_CHANNEL} ബോട്ടിനെ അഡ്മിൻ ആക്. എന്നിട്ട് /start കൊടുക്</b>\n\n<b>🗣️ any Doubt @MCubeMediaSupport</b>")
+            return
     if message.chat.id in DISABLED_GROUPS:
         return    
     lel = await message.reply("🔄 **Processing**")
