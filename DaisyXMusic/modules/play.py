@@ -459,7 +459,7 @@ async def play(_, message: Message):
     update_channel = UPDATE_CHANNEL
     if update_channel:
         try:
-            user = await _.get_chat_member(update_channel, update.chat.id)
+            user = await _.get_chat_member(update_channel, message.chat.id)
             if user.status == "kicked out":
                await message.reply_text("😔 Sorry Dude, You are **🅱︎🅰︎🅽︎🅽︎🅴︎🅳︎ 🤣🤣🤣**")
                return
