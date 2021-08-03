@@ -465,7 +465,7 @@ async def play(_, message: Message):
                return
         except UserNotParticipant:
             #await update.reply_text(f"Join @{update_channel} To Use Me")
-            await update.reply_text(
+            await reply_text(
                 text="<b>🔊 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 🤭.\n\nDo You want Movies?\nJoin Our Main Channel Then go to the group and click on the movie link button and click start button!😁</b>",
                 reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text=" 💢 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗠𝗮𝗶𝗻 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 💢 ", url=f"https://t.me/{UPDATE_CHANNEL}")]
