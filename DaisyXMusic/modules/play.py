@@ -472,9 +472,6 @@ async def play(_, message: Message):
               ])
             )
             return
-        except Exception:
-            await message.reply_text(f"<b>This bot should be the admin on your update channel</b>\n\n<b>💢 ഈ ചാനലിൽ  @{UPDATE_CHANNEL} ബോട്ടിനെ അഡ്മിൻ ആക്. എന്നിട്ട് /start കൊടുക്</b>\n\n<b>🗣️ any Doubt @MCubeMediaSupport</b>")
-            return
     if message.chat.id in DISABLED_GROUPS:
         return    
     lel = await message.reply("🔄 **Processing**")
